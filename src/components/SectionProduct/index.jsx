@@ -1,15 +1,10 @@
 import {
   Card,
   CardBody,
-  CardFooter,
   Stack,
   Heading,
   Text,
-  Divider,
-  ButtonGroup,
-  Button,
-  Image,
-  Box
+  Image
 } from '@chakra-ui/react'
 
 const SectionProduct = () => {
@@ -24,8 +19,7 @@ const SectionProduct = () => {
               alt="Green double couch with wooden legs"
             />
         <CardBody>
-            
-          <Stack mt="6" spacing="3">
+          <Stack mt="2" spacing="1">
             <Heading size="lg" color="#17214D">
               R$ 20
             </Heading>
