@@ -1,9 +1,9 @@
-import Header from '../../components/Home'
+import SectionProduct from "../../components/SectionProduct";
 
 const Home = () => {
   return (
     <>
-    <Header />
+    <SectionProduct />
     </>
   )
 }
