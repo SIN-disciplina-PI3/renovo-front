@@ -8,7 +8,6 @@ const Home = () => {
   return (
     <>
     <Navbar />
-    <SectionProduct />
     <Box marginLeft="20%" w="60%">
       <ProductCarousel />
     </Box>
