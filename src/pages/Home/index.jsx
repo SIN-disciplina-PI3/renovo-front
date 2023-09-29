@@ -1,11 +1,15 @@
-import SectionProduct from "../../components/SectionProduct";
+import React from 'react'
+import { Box} from '@chakra-ui/react'
+import ProductCarousel from '../../components/Carousel'
 
 const Home = () => {
   return (
     <>
-    <SectionProduct />
+    <Box marginLeft="20%" w="60%">
+      <ProductCarousel />
+    </Box>
     </>
   )
 }
 
-export default Home;
+export default Home
