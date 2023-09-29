@@ -4,29 +4,31 @@ import {
   Stack,
   Heading,
   Text,
-  Image
+  Image,
+  Box
 } from '@chakra-ui/react'
 
-const SectionProduct = () => {
+const SectionProduct = ({produtoProp}) => {
   return (
     <>
-      <Card maxW={263} maxH="sm" borderRadius="7%">
-      <Image
-              objectFit="cover"
-              maxW={{ base: '100%', sm: '100%' }}
-              maxH={{ base: '100%', sm: '100%' }}
-              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3"
-              alt="Green double couch with wooden legs"
-            />
+      <Card maxW={263} maxH="40vh" borderRadius="7%">
+        <Image
+          objectFit="cover"
+          maxW="95%"
+          maxH="50%"
+          src={produtoProp.url}
+        />
         <CardBody>
-          <Stack mt="2" spacing="1">
+          <Stack mt="-7" spacing="1">
             <Heading size="lg" color="#17214D">
-              R$ 20
+              R$ {produtoProp.preco}
             </Heading>
             <Text fontSize="2xl" color="#17214D">
-              Calça suede verde G
+              {produtoProp.nome}
             </Text>
-            <Text color="gray.600">por AbrigoPet</Text>
+            <Text color="gray.600">
+              {produtoProp.loja}
+            </Text>
           </Stack>
         </CardBody>
       </Card>
