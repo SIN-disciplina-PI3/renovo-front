@@ -26,11 +26,14 @@ import img1 from '../../assets/config.svg';
 import img2 from '../../assets/sair-vetor.svg';
 import img3 from '../../assets/carrinho.svg';
 import img4 from '../../assets/avatar.jpg';
+import './style.css';
 
 const Links = ['roupas', 'casa', 'eletrônicos', 'outros', 'troque aqui']
 
 const NavLink = (props) => {
-    const { children } = props
+    const { children } = props;
+    const isTroqueAqui = children === 'troque aqui';
+
     return (
         <Box
             as="a"
@@ -39,9 +42,10 @@ const NavLink = (props) => {
             rounded={'md'}
             _hover={{
                 textDecoration: 'none',
-                bg: useColorModeValue('gray.200', 'gray.700'),
+                bg: useColorModeValue('blue.50'),
                 color: 'blue'
             }}
+            className={`nav-link ${isTroqueAqui ? 'troque-aqui-link' : ''}`}
             href={'#'}>
             {children}
         </Box>
@@ -62,23 +66,26 @@ export default function WithAction() {
                         display={{ md: 'none' }}
                         onClick={isOpen ? onClose : onOpen}
                     />
+                    <Flex alignItems={'center'} marginLeft={50}>
                     <HStack spacing={8} alignItems={'center'}>
                         <Box><img src={img} alt="logo da renovo" width={30} height={35} /></Box>
                         <Stack>
                             <InputGroup >
-                            <Input placeholder='busque por produtos' size='sm' borderRadius='8px' width='230px' />
+                            <Input placeholder='busque por produtos' size='sm' borderRadius='8px' width='260px' />
                             <InputRightElement width={30} height={33}>
                                     <SearchIcon color='gray.500' />
                             </InputRightElement>
                             </InputGroup>
                         </Stack>
-                        <HStack as={'nav'} spacing={2} display={{ base: 'none', md: 'flex' }}>
+                    </HStack>
+                    </Flex>
+                    <Flex alignItems={'center'} marginRight={50}>
+                        <HStack as={'nav'} spacing={2} display={{ base: 'none', md: 'flex' }} marginRight={50} className="nav-container">
                             {Links.map((link) => (
                                 <NavLink key={link}>{link}</NavLink>
                             ))}
                         </HStack>
-                    </HStack>
-                    <Flex alignItems={'center'}>
+                        <Box h="100%" w="1px" bg="gray.500" mx={4}></Box>
                         <Button
                             variant={'solid'}
                             size={'sm'}
