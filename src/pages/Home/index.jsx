@@ -3,6 +3,7 @@ import React from 'react'
 import { Box, Text } from '@chakra-ui/react'
 import ProductCarousel from '../../components/Carousel'
 import OngCarousel from '../../components/CarouselOngs'
+import Footer from '../../components/Footer'
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
         </Text>
         <OngCarousel />
       </Box>
+      <Footer />
     </>
   )
 }
