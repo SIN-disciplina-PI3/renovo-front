@@ -11,7 +11,7 @@ import {
 const SectionProduct = ({produtoProp}) => {
   return (
     <>
-      <Card maxW={263} maxH="40vh" borderRadius="7%">
+      <Card w={180} h="45vh" borderRadius="7%">
         <Image
           objectFit="cover"
           maxW="95%"
@@ -20,13 +20,13 @@ const SectionProduct = ({produtoProp}) => {
         />
         <CardBody>
           <Stack mt="-7" spacing="1">
-            <Heading size="lg" color="#17214D">
+            <Heading size="1lg" color="#17214D">
               R$ {produtoProp.preco}
             </Heading>
             <Text fontSize="2xl" color="#17214D">
               {produtoProp.nome}
             </Text>
-            <Text color="gray.600">
+            <Text fontSize="0.5xl" color="gray.600">
               {produtoProp.loja}
             </Text>
           </Stack>

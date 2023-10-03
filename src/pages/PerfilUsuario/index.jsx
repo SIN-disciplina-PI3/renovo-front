@@ -6,6 +6,8 @@ import OngCarousel from '../../components/CarouselOngs'
 import Footer from '../../components/Footer'
 import banner from '../../utils/images/banner.png'
 import Perfil from '../../components/Perfil'
+import PerfilCarousel from '../../components/CarouselPerfil'
+
 
 
 const PerfilUsuario = () => {
@@ -14,6 +16,8 @@ const PerfilUsuario = () => {
       <Navbar />
 
       <Perfil />
+
+      <PerfilCarousel/>
 
       <Footer />
 

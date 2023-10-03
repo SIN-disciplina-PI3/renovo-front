@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Container, Spacer, Flex } from '@chakra-ui/react'
 import SectionProduct from '../SectionProduct'
-Base:"/"
 
-function ProductCarousel() {
+function PefilCarousel() {
   const [produtos, setProdutos] = useState([])
 
   useEffect(() => {
@@ -63,4 +62,4 @@ function ProductCarousel() {
   )
 }
 
-export default ProductCarousel
+export default PefilCarousel

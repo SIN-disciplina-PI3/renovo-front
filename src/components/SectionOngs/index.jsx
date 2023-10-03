@@ -12,13 +12,13 @@ import {
 const SectionOng = ({ ongProp }) => {
   return (
     <>
-      <Card maxW={263} maxh="45vh" borderRadius="7%">
+      <Card w={180} h="45vh" borderRadius="7%">
         <CardBody>
           <Stack mt="3" spacing="4">
-            <Heading size="lg" color="#17214D">
+            <Heading size="2lg" color="#17214D">
               {ongProp.nome}
             </Heading>
-            <Text fontSize="2xl" color="#17214D">
+            <Text fontSize="1xl" color="#17214D">
               {ongProp.descricao}
             </Text>
             {ongProp.tags.map((tag, index) => (
