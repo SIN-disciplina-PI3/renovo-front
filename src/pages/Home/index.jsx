@@ -11,17 +11,17 @@ const Home = () => {
     <>
       <Navbar />
 
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" marginTop={"32px"}>
         <img src={banner} alt="banner com anuncio de frete gratis" />
       </Box>
-      <Box marginLeft="20%" w="60%">
+      <Box marginTop="32px" marginLeft="8%" w="80%">
         <Text fontSize="2xl" color="#17214D">
           Novidades
         </Text>
         <ProductCarousel />
       </Box>
-
-      <Box marginLeft="20%" w="60%">
+     
+      <Box marginTop="32px" marginLeft="8%" w="80%">
         <Text fontSize="2xl" color="#17214D">
           ONGs
         </Text>
