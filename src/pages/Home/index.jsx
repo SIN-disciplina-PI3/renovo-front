@@ -1,6 +1,6 @@
 import Navbar from '../../components/Navbar'
 import React from 'react'
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Text, Center, Flex } from '@chakra-ui/react'
 import ProductCarousel from '../../components/Carousel'
 import OngCarousel from '../../components/CarouselOngs'
 import Footer from '../../components/Footer'
@@ -11,22 +11,32 @@ const Home = () => {
     <>
       <Navbar />
 
-      <Box display="flex" justifyContent="center" marginTop={"32px"}>
-        <img src={banner} alt="banner com anuncio de frete gratis" />
-      </Box>
-      <Box marginTop="32px" marginLeft="8%" w="80%">
-        <Text fontSize="2xl" color="#17214D">
-          Novidades
-        </Text>
-        <ProductCarousel />
-      </Box>
-     
-      <Box marginTop="32px" marginLeft="8%" w="80%">
-        <Text fontSize="2xl" color="#17214D">
-          ONGs
-        </Text>
-        <OngCarousel />
-      </Box>
+      <Flex justifyContent={'center'}>
+        <Flex maxW={'1440px'} direction={'column'}>
+          <Box display="flex" justifyContent="center" marginTop={'32px'}>
+            <img src={banner} alt="banner com anuncio de frete gratis" />
+          </Box>
+
+          <Box marginTop={5}>
+            <Text fontSize="2xl" color="#17214D">
+              Novidades
+            </Text>
+            <Center marginTop={3}>
+              <ProductCarousel />
+            </Center>
+          </Box>
+
+          <Box marginTop={5} marginBottom={10}>
+            <Text fontSize="2xl" color="#17214D">
+              Ongs
+            </Text>
+            <Center marginTop={3}>
+              <OngCarousel />
+            </Center>
+          </Box>
+        </Flex>
+      </Flex>
+
       <Footer />
     </>
   )

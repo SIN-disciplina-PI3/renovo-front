@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Container, Spacer, Flex } from '@chakra-ui/react'
+import { Box, Container, Spacer, Flex, SimpleGrid, HStack } from '@chakra-ui/react'
 import SectionProduct from '../SectionProduct'
 import iphone12 from '../../assets/iphone12.png'
 import iphone11pro from '../../assets/iphone11pro.png'
@@ -51,18 +51,17 @@ function ProductCarousel() {
       produto3,
       produto4,
       produto5,
-  
+
     ])
   }, [])
 
   return (
-      <Flex flexWrap="nowrap" justifyContent="space-between">
-        {produtos.map((produto, index) => (
-          <Box key={index} margin={3}>
-            <SectionProduct produtoProp={produto} />
-          </Box>
+
+      <HStack spacing={'24px'}>
+         {produtos.map((produto, index) => (
+            <SectionProduct key={index} produtoProp={produto} />
         ))}
-      </Flex>
+      </HStack>
   )
 }
 
