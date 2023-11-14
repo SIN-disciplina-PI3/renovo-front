@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Box, Container, Spacer, Flex } from '@chakra-ui/react'
+import { Box, HStack } from '@chakra-ui/react'
 import SectionOng from '../SectionOngs'
 
 function OngCarousel() {
@@ -44,13 +44,11 @@ function OngCarousel() {
   }, [])
 
   return (
-      <Flex flexWrap="nowrap" justifyContent="space-between">
+      <HStack spacing={'24px'}>
         {ongs.map((ong, index) => (
-          <Box key={index} margin={3}>
-            <SectionOng ongProp={ong} />
-          </Box>
+            <SectionOng key={index} ongProp={ong} />
         ))}
-      </Flex>
+      </HStack>
   )
 }
 

@@ -12,7 +12,7 @@ import {
 const SectionOng = ({ ongProp }) => {
   return (
     <>
-      <Card w={180} h="45vh" borderRadius="7%">
+      <Card w={200} h="36vh" borderRadius="7%">
         <CardBody>
           <Stack mt="3" spacing="4">
             <Heading size="2lg" color="#17214D">
