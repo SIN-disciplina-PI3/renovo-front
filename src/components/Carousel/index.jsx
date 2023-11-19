@@ -1,67 +1,74 @@
-import React, { useState, useEffect } from 'react'
-import { Box, Container, Spacer, Flex, SimpleGrid, HStack } from '@chakra-ui/react'
+import React, { useContext } from 'react'
+import {
+  ProdutosContext,
+  ProdutosContextProvider
+} from '../../contexts/produtosContext'
 import SectionProduct from '../SectionProduct'
-import iphone12 from '../../assets/iphone12.png'
-import iphone11pro from '../../assets/iphone11pro.png'
-import iphone13 from '../../assets/iphone13.png'
-import iphone14 from '../../assets/iphone14.png'
+
+import { Box, Flex } from '@chakra-ui/react'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
+// import required modules
+import { Pagination } from 'swiper/modules'
 
 function ProductCarousel() {
-  const [produtos, setProdutos] = useState([])
+  const { produtos } = useContext(ProdutosContext)
 
-  useEffect(() => {
-    console.log('caminho normal')
-    const produto1 = {
-      preco: '2100',
-      nome: 'Iphone 12',
-      loja: 'por Recife Importados',
-      url: iphone12
-
-    }
-    const produto2 = {
-      preco: '1900',
-      nome: 'Iphone 11',
-      loja: 'por Recife Importados',
-      url: iphone11pro
-    }
-    const produto3 = {
-      preco: '2940',
-      nome: 'Iphone 13',
-      loja: 'por Recife Imports',
-      url: iphone13
-    }
-
-    const produto4 = {
-      preco: '1930',
-      nome: 'Iphone 11',
-      loja: 'por Jaboatão Importados',
-      url: iphone11pro
-    }
-
-    const produto5 = {
-      preco: '3200',
-      nome: 'Iphone 14',
-      loja: 'por Sergipe Importados',
-      url: iphone14
-    }
-
-    setProdutos([
-      produto1,
-      produto2,
-      produto3,
-      produto4,
-      produto5,
-
-    ])
-  }, [])
+  const swiperStyle = {
+    height: '380px'
+  }
 
   return (
-
-      <HStack spacing={'24px'}>
-         {produtos.map((produto, index) => (
-            <SectionProduct key={index} produtoProp={produto} />
+    <>
+      <Swiper
+        style={swiperStyle}
+        slidesPerView={6}
+        spaceBetween={-5}
+        pagination={{
+          clickable: true
+        }}
+        breakpoints={{
+          '@0.00': {
+            slidesPerView: 1,
+            spaceBetween: 10
+          },
+          '@0.10': {
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          '@0.20': {
+            slidesPerView: 3,
+            spaceBetween: 50
+          },
+          '@0.30': {
+            slidesPerView: 4,
+            spaceBetween: 60
+          },
+          '@0.40': {
+            slidesPerView: 5,
+            spaceBetween: 80
+          },
+          '@0.50': {
+            slidesPerView: 6,
+            spaceBetween: 100
+          }
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        {produtos.map((produto, index) => (
+          <SwiperSlide key={index}>
+            <SectionProduct produtoProp={produto} />
+          </SwiperSlide>
         ))}
-      </HStack>
+      </Swiper>
+    </>
   )
 }
 

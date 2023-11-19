@@ -3,7 +3,6 @@ import {
   Flex,
   Avatar,
   HStack,
-  Text,
   IconButton,
   Button,
   Menu,
@@ -27,6 +26,7 @@ import img2 from '../../assets/sair-vetor.svg'
 import img3 from '../../assets/carrinho.svg'
 import img4 from '../../assets/avatar.jpg'
 import './style.css'
+import { Link } from 'react-router-dom'
 
 const Links = ['roupas', 'casa', 'eletrônicos', 'outros', 'troque aqui']
 
@@ -58,7 +58,7 @@ export default function WithAction() {
 
   return (
     <>
-      <Flex justifyContent="center" borderBottom="1px" borderColor='#D9D9D9'>
+      <Flex justifyContent="center" borderBottom="1px" borderColor="#D9D9D9">
         <Box maxW={'1440px'} bg={useColorModeValue('white')} px={4}>
           <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
             <IconButton
@@ -70,7 +70,7 @@ export default function WithAction() {
             />
             <Flex alignItems={'center'} marginLeft={50}>
               <HStack spacing={8} alignItems={'center'}>
-                <Box>
+                <Box as={Link} to={"/renovo-front"}>
                   <img src={img} alt="logo da renovo" width={30} height={35} />
                 </Box>
                 <Stack>
@@ -127,7 +127,7 @@ export default function WithAction() {
                     <MenuCommand fontSize={14}>Colaborador</MenuCommand>
                   </Stack>
                   <MenuDivider />
-                  <MenuItem sx={{ paddingLeft: 5 }}>
+                  <MenuItem sx={{ paddingLeft: 5 }} as={Link} to={"/renovo-front/perfil"}>
                     <img
                       src={img1}
                       alt="configuração"
@@ -135,7 +135,8 @@ export default function WithAction() {
                     />
                     Gerenciar Perfil
                   </MenuItem>
-                  <MenuItem sx={{ paddingLeft: 6 }}>
+
+                  <MenuItem sx={{ paddingLeft: 6 }} as={Link} to={"#"}>
                     <img
                       src={img2}
                       alt="sair"

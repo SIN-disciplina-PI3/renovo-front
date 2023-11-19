@@ -1,54 +1,71 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Box, HStack } from '@chakra-ui/react'
 import SectionOng from '../SectionOngs'
+import {OngsContext, OngsContextProvider} from '../../contexts/ongsContext'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
+// import required modules
+import {Pagination} from 'swiper/modules'
 
 function OngCarousel() {
-  const [ongs, setOngs] = useState([])
-
-  useEffect(() => {
-    const ong1 = {
-      nome: 'CasaRosa',
-      descricao: 'Abrigamos mulheres vítimas do câncer de mama.',
-      tags: [{nome: 'mulheres', variant: 'false'}, {nome: 'câncer de Mama', variant: 'true'}]
-    }
-    const ong2 = {
-      nome: 'Abrigo Pet',
-      descricao: 'Abrigamos bichinhos de rua para adoção.',
-      tags: [{nome: 'animais', variant: 'false'}, {nome: 'abrigo', variant: 'true'}]
-    }
-    const ong3 = {
-      nome: 'Hospitalhaços',
-      descricao: 'Levamos alegria a crianças de Hospitais Público.',
-      tags: [{nome: 'crianças', variant: 'false'}, {nome: 'hospital', variant: 'true'}]
-    }
-    const ong4 = {
-      nome: 'ÁguaSim',
-      descricao: 'Lutamos pelo direito de acesso à água para todos.',
-      tags: [{nome: 'acesso à água', variant: 'true'}]
-    }
-    const ong5 = {
-      nome: 'Arca',
-      descricao: 'Reinserção social de crianças e adolescentes',
-      tags: [{nome: 'crianças', variant: 'true'}, {nome: 'adolescentes', variant: 'true'}]
-    }
-
-    setOngs([
-      ong1,
-      ong2,
-      ong3,
-      ong4,
-      ong5
-    ])
-  }, [])
+  const {ongs} = useContext(OngsContext)
+  const swiperStyle = {
+    height: '380px'
+  }
 
   return (
-      <HStack spacing={'24px'}>
+    <>
+      <Swiper
+      style={swiperStyle}
+        slidesPerView={6}
+        spaceBetween={-5}
+        pagination={{
+          clickable: true
+        }}
+        breakpoints={{
+          '@0.00': {
+            slidesPerView: 1,
+            spaceBetween: 0
+          },
+          '@0.10': {
+            slidesPerView: 2,
+            spaceBetween: 0
+          },
+          '@0.20': {
+            slidesPerView: 3,
+            spaceBetween: 0
+          },
+          '@0.30': {
+            slidesPerView: 4,
+            spaceBetween: 0
+          },
+          '@0.40': {
+            slidesPerView: 5,
+            spaceBetween: 0
+          },
+          '@0.50': {
+            slidesPerView: 6,
+            spaceBetween: 0
+          }
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
         {ongs.map((ong, index) => (
-            <SectionOng key={index} ongProp={ong} />
+          <SwiperSlide key={index}>
+            <SectionOng ongProp={ong} />
+          </SwiperSlide>
         ))}
-      </HStack>
+      </Swiper>
+    </>
   )
 }
 

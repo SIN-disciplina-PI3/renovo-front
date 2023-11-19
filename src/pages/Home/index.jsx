@@ -10,7 +10,6 @@ const Home = () => {
   return (
     <>
       <Navbar />
-
       <Flex justifyContent={'center'}>
         <Flex maxW={'1440px'} direction={'column'}>
           <Box display="flex" justifyContent="center" marginTop={'32px'}>
