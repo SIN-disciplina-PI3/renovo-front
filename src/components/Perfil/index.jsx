@@ -1,43 +1,51 @@
-import styles from './index.css';
+
+import React, { useState } from 'react'
 import imgPerfil from '../../assets/imagemPerfil.png'
 
-import { FcApproval } from 'react-icons/fc';
-import { IoSettingsOutline } from 'react-icons/io5';
+import { IoSettingsOutline } from 'react-icons/io5'
+import { Box, Image, Flex, Text, Button } from '@chakra-ui/react'
 
-const Perfil = () =>{
-    return (
-        <div className="container">
-            <div className="imagemPerfil">
-                <img src={imgPerfil}></img>
-            </div>
-            <div className="containerInfo">
-                <div className="nomePerfil">
-                    Marcos
-                    <FcApproval size={24} />
-                </div>
+const Perfil = () => {
+  const [pessoa, setPessoa] = useState({
+    nome: 'Marcos',
+    cidade: 'Recife',
+    estado: 'PE',
+    periodo: '1',
+    url: imgPerfil,
+    profissao: 'Uber',
+    idade: '42'
+  })
 
-                <div className="infoLocalizacao">
-                    Recife, PE | na plataforma há 1 mês
-                </div>
-
-                <div className="bioUsuario">
-                    Uber, 42 anos.
-                </div>
-
-                <div className="linkPerfil">
-                    *link aqui*
-
-                </div>
-
-            </div>
-            <div className="buttonGerenciar">
-                <button>
-                    <IoSettingsOutline size={22}/>
-                    gerenciar
-                </button>
-            </div>
-        </div>
-    );
+  return (
+    <Flex>
+      <Image objectFit="cover" maxH={'85px'} maxW={'85px'} src={pessoa.url} />
+      <Flex marginLeft={4} justifyContent={'space-between'} width={'1120px'}>
+        <Box>
+          <Text fontSize="3xl" color={'#17214D'}>
+            {pessoa.nome}
+          </Text>
+          <Text fontSize={'2x1'} color={'#767676'}>
+            {pessoa.cidade}, {pessoa.estado} | na plataforma há {pessoa.periodo}{' '}
+            mês
+          </Text>
+          <Text fontSize={'2x1'} color={'#767676'} marginTop={2}>
+            {pessoa.profissao}, {pessoa.idade} anos.
+          </Text>
+          <Text fontSize={'2x1'} color={'#4E81EF'} marginTop={2}>
+            * link aqui *
+          </Text>
+        </Box>
+        <Button
+          leftIcon={<IoSettingsOutline />}
+          colorScheme="pink"
+          variant="solid"
+          marginTop={7}
+        >
+          Gerenciar
+        </Button>
+      </Flex>
+    </Flex>
+  )
 }
 
-export default Perfil;
+export default Perfil
