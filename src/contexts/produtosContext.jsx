@@ -162,7 +162,7 @@ const ProdutosContextProvider = ({ children }) => {
     const produto23 = {
       preco: '3200',
       nome: 'Iphone 14',
-      loja: 'por Sergipe Importados',
+      loja: 'por Alagoas Importados',
       url: iphone14
     }
     setProdutos([produto1, produto2, produto3, produto4, produto5, produto6, produto7, produto8, produto9, produto10, produto11, produto12, produto13, produto13, produto14, produto15, produto16, produto17, produto18, produto19, produto20, produto21, produto22, produto23])
