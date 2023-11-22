@@ -43,7 +43,7 @@ const FormLogin = () => {
           height={'44px'}
           marginTop={8}
         >
-          entrar
+          Entrar
         </Button>
       </FormControl>
   )
