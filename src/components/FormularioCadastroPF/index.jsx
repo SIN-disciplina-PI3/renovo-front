@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import InputMask from 'react-input-mask';
 import {
     FormControl,
     FormLabel,
@@ -85,28 +86,26 @@ const FormCadastroPessoaFisica = () => {
                 <Flex justify="space-between" mt={4}>
                     <FormControl flex="1">
                         <FormLabel>CPF</FormLabel>
-                        <Input
-                            type="number"
-                            placeholder="xxx.xxx.xxx-xx"
+                        <InputMask
+                            mask="999.999.999-99"
+                            maskChar={null}
                             value={dadosCadastro.cpf}
-                            onChange={onChangeInput}
-                            name={'cpf'}
-                            id={'cpf'}
-                            height={'44px'}
-                        />
+                            onChange={(e) => onChangeInput({ target: { name: 'cpf', value: e.target.value } })}
+                        >
+                            {(inputProps) => <Input {...inputProps} type="text" placeholder="xxx.xxx.xxx-xx" height={'44px'} />}
+                        </InputMask>
                     </FormControl>
 
                     <FormControl flex="1" marginLeft={4}>
                         <FormLabel>Celular</FormLabel>
-                        <Input
-                            type="tel"
-                            placeholder="(xx) 9xxxx-xxxx"
+                        <InputMask
+                            mask="(99) 9 9999-9999"
+                            maskChar={null}
                             value={dadosCadastro.celular}
-                            onChange={onChangeInput}
-                            name={'celular'}
-                            id={'celular'}
-                            height={'44px'}
-                        />
+                            onChange={(e) => onChangeInput({ target: { name: 'celular', value: e.target.value } })}
+                        >
+                            {(inputProps) => <Input {...inputProps} type="tel" placeholder="(xx) 9xxxx-xxxx" height={'44px'} />}
+                        </InputMask>
                     </FormControl>
                 </Flex>
 
@@ -126,15 +125,14 @@ const FormCadastroPessoaFisica = () => {
 
                     <FormControl flex="1" marginLeft={4}>
                         <FormLabel>CEP</FormLabel>
-                        <Input
-                            type="number"
-                            placeholder="xxxxx-xxx"
+                        <InputMask
+                            mask="99999-999"
+                            maskChar={null}
                             value={dadosCadastro.cep}
-                            onChange={onChangeInput}
-                            name={'cep'}
-                            id={'cep'}
-                            height={'44px'}
-                        />
+                            onChange={(e) => onChangeInput({ target: { name: 'cep', value: e.target.value } })}
+                        >
+                            {(inputProps) => <Input {...inputProps} type="text" placeholder="xxxxx-xxx" height={'44px'} />}
+                        </InputMask>
                     </FormControl>
 
                     <Button
