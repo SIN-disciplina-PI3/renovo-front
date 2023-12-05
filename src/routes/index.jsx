@@ -5,6 +5,7 @@ import PageNotFound from '../pages/NotFound/index'
 import Login from '../pages/Login/index'
 import Cadastro from '../pages/Cadastro/index'
 import Produto from '../pages/Produto/produto'
+import ClothingPage from '../pages/ClothingPage'
 
 
 
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         <Route path="/renovo-front/login" element={<Login />}/>
         <Route path="/renovo-front/cadastro" element={<Cadastro />}/>
         <Route path="/renovo-front/produto" element={<Produto />} />
+        <Route path="/renovo-front/roupas" element={<ClothingPage />} />
         <Route path="*" element={<PageNotFound />} />
     </Routes>
   )
