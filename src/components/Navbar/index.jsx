@@ -28,15 +28,22 @@ import img4 from '../../assets/avatar.jpg'
 import './style.css'
 import { Link } from 'react-router-dom'
 
-const Links = ['roupas', 'casa', 'eletrônicos', 'outros', 'troque aqui']
+const Links = [
+  { name: 'Roupas', path: '/renovo-front/roupas' },
+  { name: 'Casa', path: '/renovo-front/casa' },
+  { name: 'Eletrônicos', path: '/renovo-front/eletronicos' },
+  { name: 'Outros', path: '/renovo-front/outros' },
+  { name: 'Anuncie aqui', path: '/renovo-front/anuncie-aqui' },
+];
 
-const NavLink = props => {
-  const { children } = props
-  const isTroqueAqui = children === 'troque aqui'
+const NavLink = ({ name, path }) => {
+  
+  const isTroqueAqui = name === 'Anuncie aqui'
 
   return (
     <Box
-      as="a"
+    as={Link}
+    to={path}
       px={2}
       py={1}
       rounded={'md'}
@@ -46,9 +53,9 @@ const NavLink = props => {
         color: 'blue'
       }}
       className={`nav-link ${isTroqueAqui ? 'troque-aqui-link' : ''}`}
-      href={'#'}
+      
     >
-      {children}
+      {name}
     </Box>
   )
 }
@@ -97,7 +104,7 @@ export default function WithAction() {
                 className="nav-container"
               >
                 {Links.map(link => (
-                  <NavLink key={link}>{link}</NavLink>
+                  <NavLink key={link.name} name={link.name} path={link.path} />
                 ))}
               </HStack>
               <Box h="100%" w="1px" bg="gray.500" mx={4}></Box>
