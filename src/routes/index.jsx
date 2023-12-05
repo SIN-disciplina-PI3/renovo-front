@@ -4,6 +4,7 @@ import PerfilUsuario from '../pages/PerfilUsuario'
 import PageNotFound from '../pages/NotFound/index'
 import Login from '../pages/Login/index'
 import Cadastro from '../pages/Cadastro/index'
+import Produto from '../pages/Produto/produto'
 
 
 
@@ -14,6 +15,7 @@ const AppRoutes = () => {
         <Route path="/renovo-front/perfil" element={<PerfilUsuario />} />
         <Route path="/renovo-front/login" element={<Login />}/>
         <Route path="/renovo-front/cadastro" element={<Cadastro />}/>
+        <Route path="/renovo-front/produto" element={<Produto />} />
         <Route path="*" element={<PageNotFound />} />
     </Routes>
   )
