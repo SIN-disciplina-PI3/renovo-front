@@ -21,7 +21,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon, SearchIcon } from '@chakra-ui/icons'
 import img from '../../assets/logo.png'
-import img1 from '../../assets/config.svg'
+import img1 from '../../assets/perfil.png'
 import img2 from '../../assets/sair-vetor.svg'
 import img3 from '../../assets/carrinho.svg'
 import img4 from '../../assets/avatar.jpg'
@@ -37,13 +37,13 @@ const Links = [
 ];
 
 const NavLink = ({ name, path }) => {
-  
+
   const isTroqueAqui = name === 'Anuncie aqui'
 
   return (
     <Box
-    as={Link}
-    to={path}
+      as={Link}
+      to={path}
       px={2}
       py={1}
       rounded={'md'}
@@ -53,7 +53,7 @@ const NavLink = ({ name, path }) => {
         color: 'blue'
       }}
       className={`nav-link ${isTroqueAqui ? 'troque-aqui-link' : ''}`}
-      
+
     >
       {name}
     </Box>
@@ -134,16 +134,16 @@ export default function WithAction() {
                     <MenuCommand fontSize={14}>Colaborador</MenuCommand>
                   </Stack>
                   <MenuDivider />
-                  <MenuItem sx={{ paddingLeft: 5 }} as={Link} to={"/renovo-front/perfil"}>
+                  <MenuItem sx={{ paddingLeft: 6 }} as={Link} to={"/renovo-front/perfil"}>
                     <img
                       src={img1}
                       alt="configuração"
                       style={{ width: 22, height: 22, marginRight: 10 }}
                     />
-                    Gerenciar Perfil
+                    Perfil
                   </MenuItem>
 
-                  <MenuItem sx={{ paddingLeft: 6 }} as={Link} to={"#"}>
+                  <MenuItem sx={{ paddingLeft: 6 }} as={Link} to={"/renovo-front/login"}>
                     <img
                       src={img2}
                       alt="sair"

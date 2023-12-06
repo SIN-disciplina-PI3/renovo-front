@@ -1,19 +1,19 @@
 
 import React, { useState } from 'react'
-import imgPerfil from '../../assets/imagemPerfil.png'
+import imgPerfil from '../../assets/avatar.jpg'
 
 import { IoSettingsOutline } from 'react-icons/io5'
 import { Box, Image, Flex, Text, Button } from '@chakra-ui/react'
 
 const Perfil = () => {
   const [pessoa, setPessoa] = useState({
-    nome: 'Marcos',
+    nome: 'Adriana Calcanhotto',
     cidade: 'Recife',
     estado: 'PE',
     periodo: '1',
     url: imgPerfil,
-    profissao: 'Uber',
-    idade: '42'
+    profissao: 'Auxíliar Admsnistrativo',
+    idade: '39'
   })
 
   return (
