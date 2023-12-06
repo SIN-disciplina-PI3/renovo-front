@@ -16,7 +16,7 @@ const SectionProduct = ({produtoProp}) => {
           objectFit="cover"
           maxW="95%"
           maxH="50%"
-          src={produtoProp.url}
+          src={produtoProp.url[0]}
         />
         <CardBody>
           <Stack mt="" spacing="1">

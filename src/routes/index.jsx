@@ -16,7 +16,7 @@ const AppRoutes = () => {
         <Route path="/renovo-front/perfil" element={<PerfilUsuario />} />
         <Route path="/renovo-front/login" element={<Login />}/>
         <Route path="/renovo-front/cadastro" element={<Cadastro />}/>
-        <Route path="/renovo-front/produto" element={<Produto />} />
+        <Route path="/renovo-front/:index" element={<Produto />} />
         <Route path="/renovo-front/roupas" element={<ClothingPage />} />
         <Route path="*" element={<PageNotFound />} />
     </Routes>
