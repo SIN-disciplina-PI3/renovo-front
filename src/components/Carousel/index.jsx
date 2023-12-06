@@ -4,8 +4,8 @@ import {
   ProdutosContextProvider
 } from '../../contexts/produtosContext'
 import SectionProduct from '../SectionProduct'
-
-import { Box, Flex } from '@chakra-ui/react'
+import { Link as LinkDom } from 'react-router-dom';
+import { Box, Flex, Link } from '@chakra-ui/react'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -64,7 +64,9 @@ function ProductCarousel() {
       >
         {produtos.map((produto, index) => (
           <SwiperSlide key={index}>
+            <Link textDecoration={"none"} as={LinkDom} to={`/renovo-front/${index}`}>
             <SectionProduct produtoProp={produto} />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

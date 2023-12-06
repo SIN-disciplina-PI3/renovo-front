@@ -1,26 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { ProdutosContext } from '../../contexts/produtosContext';
 import imagem1 from './../../assets/Rectangle39.png'
 import imagem2 from './../../assets/Rectangle50.png'
 import imagem3 from './../../assets/Rectangle51.png'
-
 import {
     Image,
     Flex,
     Box
 } from '@chakra-ui/react';
 
-const ImagesProduct = () => {
+const ImagesProduct = ({index}) => {
 
-    const [produtos, setProdutos] = useState(['']);
+    const indexInt = parseInt(index.index, 10)
+
+    const { produtos } = useContext(ProdutosContext)
+
+    const [produto, setProduto] = useState({url: []});
     const [selectedImage, setSelectedImage] = useState(0);
 
     useEffect(() => {
-        const produto1 = { url: imagem1 };
-        const produto2 = { url: imagem2 };
-        const produto3 = { url: imagem3 };
+        const produto = { url: [imagem1, imagem2, imagem3] };
 
-        setProdutos([produto1, produto2, produto3])
-
+        setProduto(produto)
     }, [])
 
     function onChangeImagem(index) {
@@ -34,20 +35,20 @@ const ImagesProduct = () => {
                     w={504}
                     h={572}
                     objectFit='cover'
-                    src={produtos[selectedImage].url}
+                    src={produtos[indexInt]?.url[selectedImage]}
                     borderRadius={10}
                     alt='Calça'
                 />
 
                 <Flex maxW={300} justify={"space-between"} marginTop={4}>
 
-                    {produtos.map((produto, index) => (
+                    {produtos[indexInt]?.url.map((url, index) => (
                         <>
                             <Image
                                 boxSize={88}
                                 objectFit='cover'
                                 borderRadius={10}
-                                src={produto.url}
+                                src={url}
                                 alt='Calça'
                                 cursor={"pointer"}
                                 key={index}
