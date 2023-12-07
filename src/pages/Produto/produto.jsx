@@ -15,7 +15,7 @@ import {
 
 const Produto = () => {
 
-    const {index} = useParams();
+    const {id} = useParams();
     const { produtos } = useContext(ProdutosContext)
 
     return (
@@ -23,20 +23,20 @@ const Produto = () => {
             <Navbar />
             <Container maxW={"1440px"}>
             <Flex maxW={"1440px"} justifyContent={"space-around"} marginTop={10} marginBottom={10}>
-                    <ImagesProduct index={{index}} />
+                    <ImagesProduct id={id} />
                     <Flex maxH={481} maxW={416} flexDirection={"column"} justifyContent={"space-between"}>
                         <Stack spacing={1}>
-                            <Text fontSize={"4xl"} color={"#17214D"}>{produtos[index]?.nome}</Text>
-                            <Text fontSize={"1xl"} color={"#767676"} >{produtos[index]?.loja}</Text>
-                            <Text fontSize={"3xl"} color={"#17214D"} >R$ {produtos[index]?.preco},00</Text>
+                            <Text fontSize={"4xl"} color={"#17214D"}>{produtos[id - 1]?.nome}</Text>
+                            <Text fontSize={"1xl"} color={"#767676"} >{produtos[id - 1]?.loja}</Text>
+                            <Text fontSize={"3xl"} color={"#17214D"} >R$ {produtos[id - 1]?.preco},00</Text>
                         </Stack>
 
                         <Stack spacing={1}>
                             <Text fontSize={"1xl"} color={"#17214D"}> descrição</Text>
-                            <Text fontSize={"2xl"} color={"#767676"}>{produtos[index]?.descricao}</Text>
+                            <Text fontSize={"2xl"} color={"#767676"}>{produtos[id - 1]?.descricao}</Text>
                         </Stack>
 
-                        <Etiqueta infoEtiqueta={{tamanho: produtos[index]?.tamanho, estoque: produtos[index]?.estoque, estado: produtos[index]?.estado}} />
+                        <Etiqueta infoEtiqueta={{tamanho: produtos[id - 1]?.tamanho, estoque: produtos[id - 1]?.estoque, estado: produtos[id - 1]?.estado}} />
 
                         <Button colorScheme="blue" size={"lg"} maxW={416}> Tenho interesse</Button>
                     </Flex>

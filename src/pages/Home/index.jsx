@@ -21,7 +21,7 @@ const Home = () => {
               Novidades
             </Text>
             <Center marginTop={3}>
-              <ProductCarousel />
+              <ProductCarousel categoria={'novidades'} />
             </Center>
           </Box>
 

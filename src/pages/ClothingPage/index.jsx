@@ -38,8 +38,8 @@ const ClothingPage = () => {
                         </Center>
                     </Box>
 
-                    <Box marginTop={5} marginBottom={10} fontWeight='bold'>
-                        <Text fontSize="2xl" color="#17214D">
+                    <Box marginTop={5} marginBottom={10} >
+                        <Text fontSize="2xl" color="#17214D" fontWeight='bold'>
                             Calças
                         </Text>
                         <Center marginTop={3}>
