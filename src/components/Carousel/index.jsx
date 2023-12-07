@@ -31,7 +31,7 @@ function ProductCarousel({ categoria }) {
       setProdutosDaCategoria(produtos);
     }
 
-  }, []);
+  }, [produtos]);
 
   const swiperStyle = {
     height: '380px'
@@ -75,10 +75,9 @@ function ProductCarousel({ categoria }) {
         modules={[Pagination]}
         className="mySwiper"
       >
-
         {produtosDaCategoria.map((produto, index) => (
           <SwiperSlide key={index}>
-            <Link textDecoration={"none"} as={LinkDom} to={`/renovo-front/${index}`}>
+            <Link textDecoration={"none"} as={LinkDom} to={`/renovo-front/anuncio/${produto.id}`}>
             <SectionProduct produtoProp={produto} />
             </Link>
           </SwiperSlide>

@@ -34,7 +34,7 @@ const OthersPage = () => {
                             Livros
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel categoria={'eletronicos'}/>
+                            <ProductCarousel categoria={'livros'}/>
                         </Center>
                     </Box>
 
