@@ -9,6 +9,7 @@ import ClothingPage from '../pages/ClothingPage'
 import HousePage from '../pages/HousePage'
 import EletronicsPage from '../pages/EletronicsPage'
 import OthersPage from '../pages/OthersPage'
+import AdCreationPage from '../pages/AdCreationPage'
 
 
 
@@ -24,6 +25,7 @@ const AppRoutes = () => {
         <Route path="/renovo-front/casa" element={<HousePage />} />
         <Route path="/renovo-front/eletronicos" element={<EletronicsPage />} />
         <Route path="/renovo-front/outros" element={<OthersPage />} />
+        <Route path="/renovo-front/anuncie-aqui" element={<AdCreationPage />} />
         <Route path="*" element={<PageNotFound />} />
     </Routes>
   )

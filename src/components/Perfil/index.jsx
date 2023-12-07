@@ -4,6 +4,7 @@ import imgPerfil from '../../assets/avatar.jpg'
 
 import { IoSettingsOutline } from 'react-icons/io5'
 import { Box, Image, Flex, Text, Button } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 const Perfil = () => {
   const [pessoa, setPessoa] = useState({
@@ -40,8 +41,10 @@ const Perfil = () => {
           colorScheme="pink"
           variant="solid"
           marginTop={7}
+          as={Link}
+          to={'/renovo-front/anuncie-aqui'}
         >
-          Gerenciar
+          Criar anúncio
         </Button>
       </Flex>
     </Flex>
