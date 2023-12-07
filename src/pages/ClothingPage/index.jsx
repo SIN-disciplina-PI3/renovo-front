@@ -25,7 +25,7 @@ const ClothingPage = () => {
                             Vestidos
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'vestido'}/>
                         </Center>
                     </Box>
 
@@ -34,7 +34,7 @@ const ClothingPage = () => {
                             Camisetas
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'camiseta'}/>
                         </Center>
                     </Box>
 
@@ -43,7 +43,7 @@ const ClothingPage = () => {
                             Calças
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'calça'} />
                         </Center>
                     </Box>
 

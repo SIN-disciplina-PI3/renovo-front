@@ -25,7 +25,7 @@ const HousePage = () => {
                             Cozinha
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'cozinha'}/>
                         </Center>
                     </Box>
 
@@ -34,7 +34,7 @@ const HousePage = () => {
                             Cama, Mesa e Banho
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'cama'}/>
                         </Center>
                     </Box>
 
@@ -43,7 +43,7 @@ const HousePage = () => {
                             Móveis
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'móvel'}/>
                         </Center>
                     </Box>
 

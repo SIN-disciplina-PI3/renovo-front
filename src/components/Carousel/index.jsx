@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {
   ProdutosContext,
   ProdutosContextProvider
@@ -17,8 +17,21 @@ import 'swiper/css/pagination'
 // import required modules
 import { Pagination } from 'swiper/modules'
 
-function ProductCarousel() {
+function ProductCarousel({ categoria }) {
   const { produtos } = useContext(ProdutosContext)
+
+  const [produtosDaCategoria, setProdutosDaCategoria] = useState([]);
+
+  useEffect(() => {
+   
+    if(categoria){
+      const produtosFiltrados = produtos.filter((produto) => produto.categoria === categoria);
+      setProdutosDaCategoria(produtosFiltrados);
+    }else {
+      setProdutosDaCategoria(produtos);
+    }
+
+  }, []);
 
   const swiperStyle = {
     height: '380px'
@@ -62,7 +75,8 @@ function ProductCarousel() {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {produtos.map((produto, index) => (
+
+        {produtosDaCategoria.map((produto, index) => (
           <SwiperSlide key={index}>
             <Link textDecoration={"none"} as={LinkDom} to={`/renovo-front/${index}`}>
             <SectionProduct produtoProp={produto} />
