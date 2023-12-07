@@ -31,13 +31,19 @@ function PefilCarousel() {
             <Grid templateColumns="repeat(6, 1fr)" gap={4}>
               {produtos.map((produto, index) => (
                 <GridItem key={index}>
-                  <SectionProduct  produtoProp={produto} />
+                  <SectionProduct produtoProp={produto} />
                 </GridItem>
               ))}
             </Grid>
           </TabPanel>
           <TabPanel>
-            <p>a definir</p>
+            <Grid templateColumns="repeat(6, 1fr)" gap={4}>
+              {produtos.map((produto, index) => (
+                <GridItem key={index}>
+                  <SectionProduct produtoProp={produto} />
+                </GridItem>
+              ))}
+            </Grid>
           </TabPanel>
         </TabPanels>
       </Tabs>
