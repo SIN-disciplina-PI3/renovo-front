@@ -25,7 +25,7 @@ const EletronicsPage = () => {
                             Celulares e Comunicação
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'eletronicos'}/>
                         </Center>
                     </Box>
 
@@ -34,7 +34,7 @@ const EletronicsPage = () => {
                             Aúdio e Som
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'eletronicos'}/>
                         </Center>
                     </Box>
 
@@ -43,7 +43,7 @@ const EletronicsPage = () => {
                             Acessorios Eletrônicos
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'eletronicos'}/>
                         </Center>
                     </Box>
 

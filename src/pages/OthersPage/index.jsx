@@ -25,7 +25,7 @@ const OthersPage = () => {
                             Ferramentas e Construção
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'eletronicos'}/>
                         </Center>
                     </Box>
 
@@ -34,7 +34,7 @@ const OthersPage = () => {
                             Livros
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'eletronicos'}/>
                         </Center>
                     </Box>
 
@@ -43,7 +43,7 @@ const OthersPage = () => {
                             Bolsas, Malas e Mochilas
                         </Text>
                         <Center marginTop={3}>
-                            <ProductCarousel />
+                            <ProductCarousel categoria={'eletronicos'}/>
                         </Center>
                     </Box>
 
