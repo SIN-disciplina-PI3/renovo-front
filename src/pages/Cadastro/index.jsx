@@ -1,6 +1,6 @@
 import FormCadastroPessoaFisica from "../../components/FormularioCadastroPF/index";
 import FormCadastroONG from "./../../components/FormularioCadastroONG/index";
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, Center } from "@chakra-ui/react";
 import NavbarCadastro from "../../components/NavBarCadastro/index";
 import img from "../../assets/imagecadastro.png";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
@@ -9,7 +9,7 @@ const Cadastro = () => {
   return (
     <>
       <NavbarCadastro />
-      <Flex alignItems="center" height="160vh">
+      <Center alignItems="center" marginTop="3%">
         
         <Box marginLeft={"8%"}>
           <Tabs variant="unstyled"  >
@@ -33,7 +33,7 @@ const Cadastro = () => {
         <Box marginLeft={"10%"} marginTop={-40}>
           <img src={img} alt="Image cadastro" width="100%" height="auto" />
         </Box>
-      </Flex>
+      </Center>
     </>
   );
 };
