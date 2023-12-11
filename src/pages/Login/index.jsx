@@ -1,5 +1,5 @@
 import FormLogin from '../../components/FormularioLogin'
-import { Text, Flex, Link, Box } from '@chakra-ui/react'
+import { Text, Flex, Link, Box, Center } from '@chakra-ui/react'
 import { Link as LinkRouter } from 'react-router-dom'
 import NavbarLogin from '../../components/NavBarLogin/index'
 import img from '../../assets/imagelogin.png'
@@ -8,7 +8,7 @@ const Login = () => {
   return (
     <>
       <NavbarLogin />
-      <Flex alignItems="center" height="100vh">
+      <Center marginTop="5%">
         <Box marginLeft={"8%"}>
           <Text fontSize="4xl" color={'#17214D'} marginBottom={8}>
             Acesse sua conta
@@ -34,7 +34,7 @@ const Login = () => {
         <Box marginLeft={"9%"}>
           <img src={img} alt="Image login" width="100%" height="auto" />
         </Box>
-      </Flex>
+      </Center>
     </>
   )
 }
